@@ -1,123 +1,106 @@
-# 🛡️ RazorGuard AI
+# 🛡️ RazorGuard AI — Autonomous Payment Risk Manager
 
-### AI-Powered Payment Risk Management & Suspicious Transaction Analysis Platform
+> **AI-Powered Risk Intelligence Platform for Digital Merchants**  
+> *Detect risk. Understand why. Act before money is lost.*
 
-RazorGuard AI is an intelligent payment risk management platform designed to help
-identify, investigate, and explain suspicious financial transactions.
-
-The platform provides a modern interface for analyzing transaction-related risk,
-understanding suspicious activity, and presenting risk insights in a clear and
-actionable manner.
-
----
-
-## 🚀 Live Demo
-
-🔗 **Live Demo:** Coming Soon
-
-> The live demo link will be added after deployment.
+[![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=razorguard-ai)](https://vercel.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue.svg)]()
+[![React](https://img.shields.io/badge/React-18-cyan.svg)]()
 
 ---
 
-## 📸 Project Preview
+## 📌 Overview
 
-### Dashboard
-
-![RazorGuard AI Dashboard](screenshots/dashboard.png)
-
-### Transaction Analysis
-
-![Transaction Analysis](screenshots/transaction-analysis.png)
-
-### Risk Assessment
-
-![Risk Assessment](screenshots/risk-assessment.png)
-
-> 📌 Add your actual screenshots inside the `screenshots/` folder and update the
-> filenames above if required.
+**RazorGuard AI** is a real-time payment risk intelligence and autonomous fraud prevention platform engineered for high-velocity digital checkouts. Built with a dual-plane architecture, it separates sub-15ms synchronous payment classification from deep asynchronous forensic graph synthesis.
 
 ---
 
-## ✨ Key Features
+## ⚡ Key Features
 
-- 🔍 **Suspicious Transaction Detection**
-  - Identify potentially suspicious payment activity.
-
-- ⚠️ **Risk Assessment**
-  - Analyze transactions based on relevant risk indicators.
-
-- 🧠 **AI-Powered Analysis**
-  - Use intelligent analysis to assist with transaction risk investigation.
-
-- 💡 **Explainable Risk Insights**
-  - Provide understandable reasons behind suspicious transaction assessments.
-
-- 📊 **Risk Management Dashboard**
-  - Visualize and monitor payment-related risk information.
-
-- 🔎 **Transaction Investigation**
-  - Inspect individual transactions and their associated risk information.
-
-- 🎯 **Risk-Based Decision Support**
-  - Help users prioritize potentially high-risk transactions for further investigation.
-
-- 📱 **Responsive User Interface**
-  - Modern interface designed for a smooth experience across different screen sizes.
+- **Sub-15ms In-Flight Decision Engine**: Multi-stage evaluation pipeline combining deterministic rules, ML gradient boosted trees, and behavioral profiling.
+- **Explainable AI (XAI)**: SHAP-based feature attribution for every decision (e.g., amount anomaly z-score, velocity burst, proxy risk, location shift).
+- **Interactive Developer Sandbox**: Live transaction payload analyzer with customizable parameters and real-time inference simulations.
+- **AI Forensic Investigator Studio**: Autonomous agentic evidence synthesizer with tool-call traces (`get_customer_history`, `inspect_network_telemetry`, `query_consortium_graph`).
+- **Merchant Operations Dashboard**: Real-time observability console tracking processed volume, intercepted loss, risk distribution, and 1-click triage drawer actions (*Approve*, *Hold*, *Block*).
+- **Zero-Friction Clean Light UI**: Modern, accessible fintech design system inspired by Stripe, Linear, and Razorpay.
 
 ---
 
-## 🎯 Problem Statement
+## 🏗️ Architecture & Pipeline
 
-Digital payment systems process a massive number of transactions every day.
-With increasing transaction volume, identifying suspicious or potentially
-fraudulent activity manually becomes difficult, time-consuming, and inefficient.
-
-Traditional rule-based systems may also struggle with increasingly complex
-transaction patterns.
-
-RazorGuard AI aims to provide an intelligent platform that assists in:
-
-- Detecting suspicious transactions
-- Assessing transaction risk
-- Investigating potentially fraudulent activity
-- Explaining why a transaction may be considered risky
-- Presenting risk information through an intuitive interface
+```
+TRANSACTION INGESTION
+        ↓
+SIGNAL EXTRACTION (42 Features)
+        ↓
+BEHAVIOURAL PROFILING (Z-Score Deviation)
+        ↓
+DETERMINISTIC RULE ENGINE
+        ↓
+ML ENSEMBLE (XGBoost + LightGBM)
+        ↓
+COMPOSITE RISK SCORE (0–100)
+        ↓
+AGENTIC AI INVESTIGATION & EXPLAINABILITY
+        ↓
+AUTONOMOUS GATEWAY DIRECTIVES (Approve / Step-Up OTP / Block)
+```
 
 ---
 
-## 💡 Proposed Solution
+## 🚀 Tech Stack
 
-RazorGuard AI combines a modern web-based interface with intelligent transaction
-risk analysis.
+- **Frontend**: React 18, TypeScript, Tailwind CSS, Framer Motion, Lucide Icons
+- **ML & Inference**: Python 3.12, XGBoost, Isolation Forest, Scikit-Learn, SHAP
+- **Backend / Gateway**: FastAPI, Asynchronous REST & WebSocket Webhooks
+- **Data & Ledger**: PostgreSQL, PgVector, Docker Compose
 
-The general workflow of the platform is:
+---
 
-```text
-              Transaction Data
-                     │
-                     ▼
-            ┌─────────────────┐
-            │  Data Processing │
-            └────────┬────────┘
-                     │
-                     ▼
-            ┌─────────────────┐
-            │ Risk Analysis   │
-            │     Engine      │
-            └────────┬────────┘
-                     │
-                     ▼
-            ┌─────────────────┐
-            │ Risk Assessment │
-            └────────┬────────┘
-                     │
-          ┌──────────┴──────────┐
-          ▼                     ▼
-     Risk Score            Risk Indicators
-          │                     │
-          └──────────┬──────────┘
-                     ▼
-              Explanation
-                     │
-                     ▼
-             User Dashboard
+## 🛠️ Local Setup & Development
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/razorguard-ai.git
+cd razorguard-ai
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### 3. Start Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### 4. Build for Production
+```bash
+npm run build
+```
+
+---
+
+## ☁️ Deployment on Vercel
+
+### Deploy with Vercel CLI:
+```bash
+npx vercel
+```
+
+### Or Deploy via GitHub:
+1. Push this repository to GitHub.
+2. Import the repository into [Vercel](https://vercel.com/new).
+3. Set Framework Preset to **Vite**.
+4. Click **Deploy**.
+
+---
+
+## 📄 License & Attribution
+
+This project is licensed under the MIT License.  
+*Disclaimer: Built as an original student/buildathon fintech project. Not affiliated with or an official product of Razorpay Software Pvt. Ltd.*
